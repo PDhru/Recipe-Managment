@@ -19,7 +19,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
 const PORT = Config.PORT || 5000;
 

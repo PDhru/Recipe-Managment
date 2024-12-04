@@ -2,6 +2,9 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const Recipe = require("../models/Recipe");
+const { authenticateToken } = require("../middlewares/authMiddleware");
+const { checkRole } = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
@@ -57,5 +60,19 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+router.get(
+  "/admin/all",
+  authenticateToken,
+  checkRole("admin"),
+  async (req, res) => {
+    try {
+      const recipes = await Recipe.find().populate("author", "username email");
+      res.status(200).json(recipes);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  }
+);
 
 module.exports = router;
