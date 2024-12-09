@@ -28,7 +28,6 @@ const router = express.Router();
 // });
 router.post("/", authenticateToken, upload.single("image"), async (req, res) => {
   const { title, ingredients, instructions, cuisine, cookingTime } = req.body;
-
   try {
     const newRecipe = new Recipe({
       title,
@@ -48,8 +47,6 @@ router.post("/", authenticateToken, upload.single("image"), async (req, res) => 
     res.status(500).json({ error: "Server error occurred" });
   }
 });
-
-
 
 
 // Get All Recipes
