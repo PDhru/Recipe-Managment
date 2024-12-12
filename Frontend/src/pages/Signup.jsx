@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -35,42 +36,121 @@ const Signup = () => {
       setError(err.response?.data?.message || "Signup failed");
     }
   };
-    return (
-        <div className="contact-area section_padding_80">
-            <div className="container">
-                <div className="contact-form-area">
-                    <div className="row">
-                        <div className="col-12 col-md-5">
-                            <div className="contact-form-sidebar item wow fadeInUpBig" data-wow-delay="0.3s" style={{ backgroundImage: 'url("img/bg-img/contact.jpg")', height: 544, visibility: 'visible', animationDelay: '0.3s', animationName: 'fadeInUpBig' }}>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-7 item" style={{ height: 544 }}>
-                            <div className="contact-form wow fadeInUpBig" data-wow-delay="0.6s" style={{ visibility: 'visible', animationDelay: '0.6s', animationName: 'fadeInUpBig' }}>
-                                <h2>Sig Up</h2>
-                                <form onSubmit={handleSubmit}>
-                                    <div>
-                                        <label>Name:</label>
-                                        <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-                                    </div>
-                                    <div>
-                                        <label>Email:</label>
-                                        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                                    </div>
-                                    <div>
-                                        <label>Password:</label>
-                                        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-                                    </div>
-                                    {message && <p style={{ color: "green" }}>{message}</p>}
-                                    {error && <p style={{ color: "red" }}>{error}</p>}
-                                    <button type="submit">Sign Up</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
 
-export default Signup
+  return (
+    <div
+      className="container-fluid d-flex justify-content-center align-items-center vh-100"
+    // style={{
+    //   background: "linear-gradient(to bottom right, #6a11cb, #2575fc)",
+    // }}
+    >
+      <div
+        className="card shadow-lg p-4 border-0"
+        style={{
+          width: "30rem",
+          borderRadius: "1rem",
+          background: "linear-gradient(to bottom right,#FFFFFF,#FF5C35)"
+        }}
+      >
+        <div className="card-body">
+          <h3
+            className="card-title text-center mb-4"
+            style={{ fontWeight: "bold", color: "orange" }}
+          >
+            Create an Account
+          </h3>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label" style={{ color: "#444" }}>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="username"
+                className="form-control"
+                placeholder="Enter your name"
+                value={formData.username}
+                onChange={handleChange}
+                required
+                style={{
+                  borderRadius: "0.5rem",
+                  borderColor: "orange",
+                }}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label" style={{ color: "#444" }}>
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="form-control"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                style={{
+                  borderRadius: "0.5rem",
+                  borderColor: "orange",
+                }}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label" style={{ color: "#444" }}>
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="form-control"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                style={{
+                  borderRadius: "0.5rem",
+                  borderColor: "orange",
+                }}
+              />
+            </div>
+            {message && <p className="text-success text-center">{message}</p>}
+            {error && <p className="text-danger text-center">{error}</p>}
+            <button
+              type="submit"
+              className="btn btn-primary w-100"
+              style={{
+                borderRadius: "0.5rem",
+                background: "linear-gradient(to right, #FFFFFF,#FF5C35)",
+                border: "none",
+                fontWeight: "bold",
+              }}
+            >
+              Sign Up
+            </button>
+          </form>
+          <div className="text-center mt-3">
+            <p style={{ fontSize: "0.9rem", color: "#666" }}>
+              Already have an account?{" "}
+              <a
+                href="/login"
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+              >
+                Log In
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;

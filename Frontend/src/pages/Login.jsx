@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./login.css"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -25,38 +27,87 @@ const Login = () => {
             setError(err.response?.data?.message || "Login failed");
         }
     };
+
     return (
-        <>
-            <div className="contact-area section_padding_80">
-                <div className="container">
-                    <div className="contact-form-area">
-                        <div className="row">
-                            <div className="col-12 col-md-5">
-                                <div className="contact-form-sidebar item wow fadeInUpBig" data-wow-delay="0.3s" style={{ backgroundImage: 'url("img/bg-img/contact.jpg")', height: 544, visibility: 'visible', animationDelay: '0.3s', animationName: 'fadeInUpBig' }}>
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-7 item" style={{ height: 544 }}>
-                                <div className="contact-form wow fadeInUpBig" data-wow-delay="0.6s" style={{ visibility: 'visible', animationDelay: '0.6s', animationName: 'fadeInUpBig' }}>
-                                    <h2>Login</h2>
-                                    <form onSubmit={handleSubmit}>
-                                        <div>
-                                            <label>Email:</label>
-                                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                                        </div>
-                                        <div>
-                                            <label>Password:</label>
-                                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                                        </div>
-                                        {error && <p style={{ color: "red" }}>{error}</p>}
-                                        <button type="submit">Login</button>
-                                    </form>
-                                </div>
-                            </div>
+        <div className="container d-flex justify-content-center align-items-center vh-100  " id="hero">
+            <div
+                className="card shadow-lg border-0"
+                style={{
+                    width: "30rem",
+                    borderRadius: "1rem",
+                    background: "linear-gradient(to bottom right, #FFFFFF,#FF5C35)",
+                    color: "white"
+                }}
+            >
+                <div className="card-body">
+                    <h3 className="card-title text-center mb-4" style={{ fontWeight: "bold" }}>
+                        Welcome Back
+                    </h3>
+                    <p className="text-center" style={{ fontSize: "1rem" }}>
+                        Please login to your account
+                    </p>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                className="form-control"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                style={{ borderRadius: "0.5rem" }}
+                            />
                         </div>
+                        <div className="mb-3">
+                            <label htmlFor="password" className="form-label">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                style={{ borderRadius: "0.5rem" }}
+                            />
+                        </div>
+                        {error && <p className="text-danger text-center">{error}</p>}
+                        <button
+                            type="submit"
+                            className="btn btn-light w-100"
+                            style={{
+                                borderRadius: "0.5rem",
+                                fontWeight: "bold",
+                                color: "#2575fc",
+                            }}
+                        >
+                            Login
+                        </button>
+                    </form>
+                    <div className="text-center mt-4">
+                        <p>
+                            Don't have an account?{" "}
+                            <Link
+                                to="/signup"
+                                style={{
+                                    color: "black",
+                                    textDecoration: "none",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                Create an Account
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

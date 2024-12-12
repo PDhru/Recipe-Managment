@@ -2,14 +2,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer_area">
+    <footer className="footer_area ">
     <div className="container">
       <div className="row">
         <div className="col-12">
           <div className="footer-content">
             {/* Logo Area Start */}
             <div className="footer-logo-area text-center">
-              <a href="index.html" className="yummy-logo">Yummy Blog</a>
+              <a  className="yummy-logo text-white">Yummy Blog</a>
             </div>
             {/* Menu Area Start */}
             <nav className="navbar navbar-expand-lg">
@@ -18,22 +18,22 @@ const Footer = () => {
               <div className="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
                 <ul className="navbar-nav">
                   <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                    <a className="nav-link">Home <span className="sr-only">(current)</span></a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Features</a>
+                    <a className="nav-link text-white">Features</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Categories</a>
+                    <a className="nav-link text-white">Categories</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Archive</a>
+                    <a className="nav-link text-white">Archive</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">About</a>
+                    <a className="nav-link text-white">About</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">Contact</a>
+                    <a className="nav-link text-white">Contact</a>
                   </li>
                 </ul>
               </div>

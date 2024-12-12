@@ -53,7 +53,7 @@ const Index = () => {
         <div className="row">
           {recipes.map((recipe) => (
             <div key={recipe._id} className="col-12 col-md-6 col-lg-4">
-              <div className="single-post wow fadeInUp" data-wow-delay="0.1s">
+              <div className="single-post wow fadeInUp bg-white " data-wow-delay="0.1s">
                 {/* Post Thumb */}
                 <div className="post-thumb">
                   <img
@@ -63,20 +63,20 @@ const Index = () => {
                   />
                 </div>
                 {/* Post Content */}
-                <div className="post-content">
+                <div className="post-content px-4 ">
                   <div className="post-meta d-flex">
                     <div className="post-author-date-area d-flex">
                       {/* Post Author */}
                       <div className="post-author">
-                        <a href="#">By {recipe.author?.username || "Unknown"}</a>
+                        <a >By {recipe.author?.username || "Unknown"}</a>
                       </div>
                       {/* Post Date */}
                       <div className="post-date">
-                        <a href="#">{new Date(recipe.createdAt).toLocaleDateString()}</a>
+                        <a >{new Date(recipe.createdAt).toLocaleDateString()}</a>
                       </div>
                     </div>
                   </div>
-                  <a href="#">
+                  <a >
                     <h4 className="post-headline">{recipe.title}</h4>
                   </a>
                   <p>{recipe.cuisine}</p>

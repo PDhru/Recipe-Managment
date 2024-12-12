@@ -1,0 +1,26 @@
+body {
+  background-image: url(../pages/bg.jpg);
+  z-index: 11;
+  background-repeat: no-repeat;
+  text-decoration: none !important;
+  font-family: 'Quicksand', sans-serif !important;
+  background-size: cover;
+
+}
+input{border: none;}
+
+body::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+footer{
+  color: white !important;
+  background-color: rgba(35, 45, 55, 0.7);
+  backdrop-filter:blur(9px);
+}

@@ -619,7 +619,11 @@ li {
 /* --------------------
 :: 6.0 Blog Area CSS 
 -------------------- */
-
+.post-thumb{
+    /* background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px; */
+}
 .post-thumb img {
     border-radius: 30px;
     margin-bottom: 30px;
@@ -675,6 +679,8 @@ li {
 }
 
 .single-post {
+    border-radius: 30px;
+    padding-bottom: 20px;
     margin-bottom: 30px;
 }
 
@@ -875,10 +881,11 @@ li {
 .footer_area .navbar.navbar-expand-lg .navbar-nav .nav-link {
     padding-bottom: 0;
 }
-
-/* --------------------
-:: 9.0 Goole Map Area CSS
--------------------- */
+.footer_arear{
+    background-color: white;
+    background-color: rgba(35, 45, 55, 0.7);
+    backdrop-filter:blur(9px);
+}
 
 #googleMap {
     height: 620px;
@@ -1089,6 +1096,7 @@ li {
     top: 0;
     left: 0;
     background-color: rgba(35, 45, 55, 0.7);
+    backdrop-filter:blur(9px);
     z-index: -1;
 }
 

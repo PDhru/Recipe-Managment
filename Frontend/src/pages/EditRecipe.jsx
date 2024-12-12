@@ -82,18 +82,18 @@ const EditRecipe = () => {
             </div>
             <div className="col-12 col-md-7 item" style={{ height: 544 }}>
               <div className="contact-form wow fadeInUpBig" data-wow-delay="0.6s" style={{ visibility: 'visible', animationDelay: '0.6s', animationName: 'fadeInUpBig' }}>
-              <h2>Edit Recipe</h2>
+              <h2 className="text-white">Edit Recipe</h2>
                 <form onSubmit={handleSubmit}>
-                    <input className="d-block mb-2" type="text" name="title" value={recipe.title} onChange={handleChange} placeholder="Title" required />
-                    <textarea className="d-block mb-2" name="ingredients" value={recipe.ingredients} onChange={handleChange} placeholder="Ingredients (comma-separated)" required ></textarea>
-                    <textarea className="d-block mb-2" name="instructions" value={recipe.instructions} onChange={handleChange} placeholder="Instructions" required ></textarea>
-                    <input className="d-block mb-2" type="text" name="cuisine" value={recipe.cuisine} onChange={handleChange} placeholder="Cuisine" required />
-                    <input className="d-block mb-2" type="number" name="cookingTime" value={recipe.cookingTime} onChange={handleChange} placeholder="Cooking Time (minutes)" required />
+                    <input className="px-3 py-2 mb-2 rounded-3 w-100" type="text" name="title" value={recipe.title} onChange={handleChange} placeholder="Title" required />
+                    <textarea className="px-3 py-2 mb-2 rounded-3 w-100" name="ingredients" value={recipe.ingredients} onChange={handleChange} placeholder="Ingredients (comma-separated)" required ></textarea>
+                    <textarea className="px-3 py-2 mb-2 rounded-3 w-100" name="instructions" value={recipe.instructions} onChange={handleChange} placeholder="Instructions" required ></textarea>
+                    <input className="px-3 py-2 mb-2 rounded-3 w-100" type="text" name="cuisine" value={recipe.cuisine} onChange={handleChange} placeholder="Cuisine" required />
+                    <input className="px-3 py-2 mb-2 rounded-3 w-100" type="number" name="cookingTime" value={recipe.cookingTime} onChange={handleChange} placeholder="Cooking Time (minutes)" required />
                           {/* Image upload input */}
-                    <input type="file" onChange={handleImageChange} />
-                    {recipe.image && <p>Current Image: <img src={`http://localhost:8000/${recipe.image}`} alt="current recipe" style={{ width: "100px" }} /></p>}
+                    <input type="file" onChange={handleImageChange} className="px-3 py-2 mb-2 rounded-3 w-100 bg-white" />
+                    {recipe.image && <p className="text-white mt-2">Current Image: <img src={`http://localhost:8000/${recipe.image}`} className="rounded-2" alt="current recipe" style={{ width: "100px" }} /></p>}
                     
-                    <button className="d-block mb-2" type="submit">Update Recipe</button>
+                    <button className="d-block mb-2 btn  btn-success" type="submit" >Update Recipe</button>
                 </form>
               </div>
             </div>
